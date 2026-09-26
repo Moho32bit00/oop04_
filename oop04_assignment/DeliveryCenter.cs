@@ -56,7 +56,7 @@ namespace oop04_assignment
             {
                 if (shipment[i] == null)
                 {
-                    shipment[i] = s_shipment;
+                   shipment[i] = s_shipment;
                     return true;
                 }
 
@@ -83,29 +83,46 @@ namespace oop04_assignment
 
         public void PrintAllShipments()
         {
+                    Console.WriteLine("=================================================All Shipments :");
             foreach (var item in shipment)
             {
                 if (item != null)
                 {
                     item.PrintShipment();
                     Console.WriteLine();
+                    Console.WriteLine("=================================================");
                 }
             }
         }
-
         public void PrintAllTrackingStatues()
         {
+            int counter = 0; 
+                Console.WriteLine("=================================================All tracking status");
             foreach (ITrackable t in shipment)
-            {
-                t.GettrackingStatus();
+            { if (t != null)
+                {
+                    Console.WriteLine($"Shipment {shipment[counter].TrackingCode}  is {t.GettrackingStatus()}.");
+                    Console.WriteLine("=================================================");
+                    counter++;
+                }
+                else { return; }
             }
+            Console.WriteLine();
         }
-
         public void PrintAllInsurance()
         {
+            int counter = 0;
+                Console.WriteLine("=================================================All Insurance");
             foreach (IInsurable i in shipment)
             {
-                i.CalculateInsurance();
+                if (i != null)
+                {
+
+                    Console.WriteLine($"{shipment[counter].GetType().Name } Shipment Insurance : {i.CalculateInsurance()}"); ;
+                    Console.WriteLine("=================================================");
+                    counter++;
+                }else { return; }
+                Console.WriteLine();
             }
         }
     }

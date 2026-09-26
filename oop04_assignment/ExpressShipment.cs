@@ -6,14 +6,15 @@ namespace oop04_assignment
 {
     public class ExpressShipment : Shipment, ITrackable, IInsurable
     {
+        private decimal extrafee;
         public decimal ExtraFee
         {
-            get { return ExtraFee; }
+            get { return extrafee; }
             set
             {
                 if (ExtraFee >= 0)
                 {
-                    ExtraFee = value;
+                    extrafee = value;
                 }
             }
         }
@@ -30,13 +31,12 @@ namespace oop04_assignment
             Weight: {Weight} kg
             Delivery Fee: {DeliveryFee}
             ExtraFee : {ExtraFee}
-            Estimated Cost : {EstimatedCost}
-            Destination: {Destination}");
+            Estimated Cost : {EstimatedCost}");
 
         }
 
         public ExpressShipment() { }
-        public ExpressShipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination, decimal fee , string trackingStatus) : base(trackingCode, description, weight, deliveryFee, destination , trackingStatus)
+        public ExpressShipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination, decimal ExtraFee, string trackingStatus) : base(trackingCode, description, weight, deliveryFee, destination , trackingStatus)
         {
             Destination = destination;
             this.ExtraFee = ExtraFee;
@@ -44,7 +44,7 @@ namespace oop04_assignment
 
         public string GettrackingStatus()
         {
-            return TrackingCode;
+            return TrackingStatus;
         }
 
         public decimal CalculateInsurance()

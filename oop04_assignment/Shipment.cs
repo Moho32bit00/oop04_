@@ -6,7 +6,7 @@ namespace oop04_assignment
 {
     public abstract class Shipment
     {
-        private string trackingCode;
+        protected string trackingCode;
         private string description;
         private decimal weight;
         protected decimal deliveryFee;
@@ -41,7 +41,7 @@ namespace oop04_assignment
             }
         }
 
-        public string TrackingStatus { get; }
+        public string TrackingStatus => trackingStatus;
         public decimal DeliveryFee
         {
             get { return deliveryFee; }

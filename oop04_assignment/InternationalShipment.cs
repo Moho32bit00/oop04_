@@ -6,25 +6,15 @@ namespace oop04_assignment
 {
     public class InternationalShipment : Shipment, ITrackable, IInsurable
     {
-        public string DestinationCountry
-        {
-            get { return DestinationCountry; }
-            set
-            {
-                if (DestinationCountry != null || DestinationCountry != "" || DestinationCountry != " ")
-                {
-                    DestinationCountry = value;
-                }
-            }
-        }
+        private decimal customsFee;
         public decimal CustomsFee
         {
-            get { return CustomsFee; }
+            get { return customsFee; }
             set
             {
                 if (CustomsFee >= 0)
                 {
-                    CustomsFee = value;
+                    customsFee = value;
                 }
             }
 
@@ -39,28 +29,26 @@ namespace oop04_assignment
             Console.WriteLine($@"Tracking Code: {TrackingCode}
         Description: {Description}
         Destination :
-        Destination Country : {DestinationCountry}
+        Destination Country : {Destination.DestinationCountry}
         City : {Destination.City}
         Street : {Destination.Street}
         Building Number : {Destination.BuildingNumber}
         Weight: {Weight} kg
         Delivery Fee: {DeliveryFee}
         CustomsFee : {CustomsFee}
-        Estimated Cost : {EstimatedCost}
-        Destination: {Destination}");
+        Estimated Cost : {EstimatedCost}");
         }
 
         public virtual void GenerateCustomsReport() { }
         public InternationalShipment() { }
-        public InternationalShipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination, string DestinationCountry, decimal CustomsFee , string trackingStatus) : base(trackingCode, description, weight, deliveryFee, destination , trackingStatus)
+        public InternationalShipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination, decimal CustomsFee , string trackingStatus) : base(trackingCode, description, weight, deliveryFee, destination , trackingStatus)
         {
             this.CustomsFee = CustomsFee;
-            this.DestinationCountry = DestinationCountry;
         }
 
         public string GettrackingStatus()
         {
-            return TrackingCode;
+            return TrackingStatus;
         }
 
         public decimal CalculateInsurance()

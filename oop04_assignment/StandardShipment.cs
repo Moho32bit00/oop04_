@@ -29,13 +29,14 @@ namespace oop04_assignment
             Building Number : {Destination.BuildingNumber}
             Weight: {Weight} kg
             Delivery Fee: {DeliveryFee}
-            Estimated Cost : {EstimatedCost}
-            Destination: {Destination}");
+            Estimated Cost : {EstimatedCost}"
+            );
+
         }
 
         public string GettrackingStatus()
         {
-            return TrackingCode;           
+            return TrackingStatus;           
         }
 
         public decimal CalculateInsurance()
