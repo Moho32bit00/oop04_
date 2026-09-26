@@ -14,8 +14,8 @@ namespace oop04_assignment
         }
         public override decimal EstimatedCost
         { get { return deliveryFee; } }
-        public StandardShipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination)
-            : base(trackingCode, description, weight, deliveryFee, destination)
+        public StandardShipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination , string trackingStatus)
+            : base(trackingCode, description, weight, deliveryFee, destination, trackingStatus)
         {
         }
 
@@ -35,7 +35,7 @@ namespace oop04_assignment
 
         public string GettrackingStatus()
         {
-            return "standard delivery ready";           
+            return TrackingCode;           
         }
 
         public decimal CalculateInsurance()

@@ -10,7 +10,7 @@ namespace oop04_assignment
         private string description;
         private decimal weight;
         protected decimal deliveryFee;
-
+        private string trackingStatus;
         public string TrackingCode => trackingCode;
 
         public string Description
@@ -41,6 +41,7 @@ namespace oop04_assignment
             }
         }
 
+        public string TrackingStatus { get; }
         public decimal DeliveryFee
         {
             get { return deliveryFee; }
@@ -68,13 +69,14 @@ namespace oop04_assignment
             DeliveryFee = 50;
             Destination = new DeliveryAddress("Unknown", "Unknown", 0);
         }
-        public Shipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination)
+        public Shipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination , string trackingStatus)
         {
             this.trackingCode = trackingCode;
             this.description = description;
             this.weight = weight;
             this.deliveryFee = deliveryFee;
             Destination = destination;
+            this.trackingStatus = trackingStatus;
         }
         //==========
 

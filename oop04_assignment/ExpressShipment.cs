@@ -36,7 +36,7 @@ namespace oop04_assignment
         }
 
         public ExpressShipment() { }
-        public ExpressShipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination, decimal fee) : base(trackingCode, description, weight, deliveryFee, destination)
+        public ExpressShipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination, decimal fee , string trackingStatus) : base(trackingCode, description, weight, deliveryFee, destination , trackingStatus)
         {
             Destination = destination;
             this.ExtraFee = ExtraFee;
@@ -44,7 +44,7 @@ namespace oop04_assignment
 
         public string GettrackingStatus()
         {
-            return "Express Shipment delivery ready ";
+            return TrackingCode;
         }
 
         public decimal CalculateInsurance()

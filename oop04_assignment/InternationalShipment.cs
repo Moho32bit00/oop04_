@@ -52,7 +52,7 @@ namespace oop04_assignment
 
         public virtual void GenerateCustomsReport() { }
         public InternationalShipment() { }
-        public InternationalShipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination, string DestinationCountry, decimal CustomsFee) : base(trackingCode, description, weight, deliveryFee, destination)
+        public InternationalShipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination, string DestinationCountry, decimal CustomsFee , string trackingStatus) : base(trackingCode, description, weight, deliveryFee, destination , trackingStatus)
         {
             this.CustomsFee = CustomsFee;
             this.DestinationCountry = DestinationCountry;
@@ -60,7 +60,7 @@ namespace oop04_assignment
 
         public string GettrackingStatus()
         {
-            return "International Shipment delivery ready ";
+            return TrackingCode;
         }
 
         public decimal CalculateInsurance()
