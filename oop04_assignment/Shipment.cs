@@ -9,7 +9,7 @@ namespace oop04_assignment
         private string trackingCode;
         private string description;
         private decimal weight;
-        private decimal deliveryFee;
+        protected decimal deliveryFee;
 
         public string TrackingCode => trackingCode;
 
