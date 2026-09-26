@@ -4,7 +4,7 @@ using System.Text;
 
 namespace oop04_assignment
 {
-    internal interface ITrackable
+    public interface ITrackable
     {
         string GettrackingStatus();
     }
